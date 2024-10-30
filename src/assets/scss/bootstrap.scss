@@ -1,0 +1,41 @@
+// Colors
+$primary: #00324E;
+$dark: black;
+$light: #f3f6f9;
+$info:#3085FE;
+$warning: #FFCE3F;
+$danger: #ED1C24;
+
+// Navbar
+$navbar-padding-y : 1rem;
+$navbar-dark-color:  #fff;
+
+// Spacers
+$spacer: 1rem !default;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+  6: $spacer * 6,
+  7: $spacer * 8,
+  8: $spacer * 12,
+) !default;
+
+// Box-shadow
+$box-shadow-sm: 0 0 10px rgba(0, 0, 0, 0.2) !default;
+
+// Custom input focus styles
+input.form-control,
+textarea.form-control,
+select.form-select {
+  &:focus {
+    border-color: $primary !important;
+    box-shadow: 0 0 0 1px $light !important; // Optional: Add a softer box-shadow with primary color
+  }
+}
+
+
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
