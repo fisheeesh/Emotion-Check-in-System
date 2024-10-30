@@ -1,5 +1,5 @@
 <template>
-    <nav class="filter-nav">
+    <nav class="filter-nav my-3 ms-2">
         <button @click="filterBy('weekly')" :class="{ active: current === 'weekly' }">Weekly</button>
         <button @click="filterBy('monthly')" :class="{ active: current === 'monthly' }">Monthly</button>
         <button @click="filterBy('yearly')" :class="{ active: current === 'yearly' }">Yearly</button>
@@ -21,7 +21,6 @@ export default {
 </script>
 
 <style>
-
 .filter-nav button:hover {
     background: none;
 }

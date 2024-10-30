@@ -5,7 +5,7 @@
                 <div
                     class="col-md-7 d-flex flex-column justify-content-between align-items-start align-items-md-start align-items-sm-center">
                     <span class="mt-2 date text-white fw-bold rounded-2 px-3 py-2"
-                        style="width: 175px; font-size: 12px;">
+                        style="width: 181px; font-size: 12px;">
                         <i class="fas fa-calendar"></i> {{ formattedDate }}
                     </span>
                     <div class="mt-sm-2">
