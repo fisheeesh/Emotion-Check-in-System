@@ -41,7 +41,5 @@ export default {
 </script>
 
 <style>
-.date {
-    background-color: rgba(243, 240, 240, 0.474) !important;
-}
+
 </style>

@@ -72,15 +72,5 @@ export default {
 </script>
 
 <style>
-.third {
-    color: #CD7F32;
-}
 
-.fourth {
-    color: #ef7e13;
-}
-
-.fifth {
-    color: #A9A9A9;
-}
 </style>

@@ -209,23 +209,5 @@ export default {
 </script>
 
 <style>
-.empCon {
-    height: 250px;
-    overflow-y: scroll;
-}
 
-.view {
-    cursor: pointer;
-    color: gray;
-    transition: all 0.3s ease;
-}
-
-.view:hover {
-    color: #00324E !important;
-}
-
-.dep {
-    font-size: 14px;
-    color: gray;
-}
 </style>

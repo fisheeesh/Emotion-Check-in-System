@@ -104,8 +104,5 @@ export default {
 </script>
 
 <style scoped>
-.card {
-    display: flex;
-    flex-direction: column;
-}
+
 </style>

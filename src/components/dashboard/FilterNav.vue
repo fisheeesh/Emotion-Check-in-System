@@ -21,24 +21,5 @@ export default {
 </script>
 
 <style>
-.filter-nav button:hover {
-    background: none;
-}
 
-.filter-nav button {
-    border: none;
-    background: none;
-    font-size: 0.7rem;
-    padding: 0;
-    margin-right: 15px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    cursor: pointer;
-    font-weight: 900;
-    color: #aaa;
-}
-
-.filter-nav button.active {
-    color: #00324E !important;
-}
 </style>

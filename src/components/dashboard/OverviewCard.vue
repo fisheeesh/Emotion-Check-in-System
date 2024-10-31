@@ -5,9 +5,7 @@
                 <h4 class="fw-bold mb-0">Weekly Overview</h4>
                 <i class="fas fa-question-circle text-secondary"></i>
             </div>
-
             <div class="d-flex flex-column justify-content-start mt-4 vstack gap-4">
-                <!-- Positive Mood -->
                 <div class="d-flex align-items-center justify-content-start gap-5">
                     <img src="../../assets/images/positive.png" width="66" alt="">
                     <div>

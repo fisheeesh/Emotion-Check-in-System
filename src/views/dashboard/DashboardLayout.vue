@@ -34,12 +34,5 @@ export default {
 </script>
 
 <style scoped>
-.dashboard-layout {
-    display: flex;
-    height: 100vh;
-}
 
-.main {
-    transition: 0.3s linear;
-}
 </style>

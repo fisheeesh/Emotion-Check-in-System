@@ -41,8 +41,5 @@ export default {
 </script>
 
 <style>
-.dep {
-    font-size: 14px;
-    color: gray;
-}
+
 </style>

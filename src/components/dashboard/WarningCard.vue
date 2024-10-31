@@ -65,8 +65,4 @@ export default {
 </script>
 
 <style>
-.chart-canvas {
-    height: 250px;
-    /* Adjust height as needed */
-}
 </style>

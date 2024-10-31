@@ -4,6 +4,22 @@
   --sidebar-item-color: #00324E;
 }
 
+#app {
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2c3e50;
+}
+
+.dashboard-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  transition: 0.3s linear;
+}
+
 .container {
   max-height: 85vh;
   overflow-y: auto;
@@ -26,4 +42,80 @@
   cursor: pointer;
   font-size: 20px;
   color: #aaa;
+}
+
+.chart-canvas {
+  width: 100%;
+  height: 300px !important;
+}
+
+.dep {
+  font-size: 14px;
+  color: gray;
+}
+
+.third {
+  color: #CD7F32;
+}
+
+.fourth {
+  color: #ef7e13;
+}
+
+.fifth {
+  color: #A9A9A9;
+}
+
+.filter-nav button:hover {
+  background: none;
+}
+
+.filter-nav button {
+  border: none;
+  background: none;
+  font-size: 0.7rem;
+  padding: 0;
+  margin-right: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: 900;
+  color: #aaa;
+}
+
+.filter-nav button.active {
+  color: #00324E !important;
+}
+
+.date {
+  background-color: rgba(243, 240, 240, 0.474) !important;
+}
+
+.positive {
+  color: rgb(0, 192, 0);
+}
+
+.empCon {
+  height: 250px;
+  overflow-y: scroll;
+}
+
+.view {
+  cursor: pointer;
+  color: gray;
+  transition: all 0.3s ease;
+}
+
+.view:hover {
+  color: #00324E !important;
+}
+
+.dep {
+  font-size: 14px;
+  color: gray;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
 }

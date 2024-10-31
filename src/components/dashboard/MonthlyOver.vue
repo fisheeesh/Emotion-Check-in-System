@@ -38,7 +38,5 @@ export default {
 </script>
 
 <style>
-.positive {
-    color: rgb(0, 192, 0);
-}
+
 </style>
