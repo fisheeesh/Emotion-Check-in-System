@@ -28,6 +28,10 @@
 .password {
     position: relative;
 }
+.password .move {
+    top: 54%;
+    right: 28px;
+}
 
 .eye {
     position: absolute;
@@ -86,16 +90,6 @@
 .empCon {
     height: 250px;
     overflow-y: scroll;
-}
-
-.view {
-    cursor: pointer;
-    color: gray;
-    transition: all 0.3s ease;
-}
-
-.view:hover {
-    color: #00324E !important;
 }
 
 .dep {

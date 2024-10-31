@@ -3,7 +3,7 @@
         <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8">
             <Spinner />
         </div>
-        <div v-else class="container-fluid pb-5">
+        <div v-else class="container-fluid pb-5 gg">
             <div class="row my-4 align-items-stretch">
                 <div class="col-md-4 mb-2">
                     <PieChart />
@@ -20,7 +20,7 @@
                             :profile-pic="user.profilePic" :score="user.score" :rank="index + 1" />
                     </div>
                 </div>
-                <div class="col-md-5">
+                <div class="col-md-5 hover">
                     <div class="d-flex justify-content-between align-items-center me-3">
                         <h4 class="fw-bold mb-3">Currently Check-ins</h4>
                         <h6 clas="view" data-bs-toggle="modal" data-bs-target="#viewAll">View All</h6>
@@ -199,7 +199,7 @@ export default {
             }
         ])
 
-        let rnkUsers = computed(() =>  [...users.value].sort((a, b) => b.score - a.score) )
+        let rnkUsers = computed(() => [...users.value].sort((a, b) => b.score - a.score))
 
         onMounted(() => setTimeout(() => loading.value = false, 800))
 
@@ -209,5 +209,4 @@ export default {
 </script>
 
 <style>
-
 </style>
