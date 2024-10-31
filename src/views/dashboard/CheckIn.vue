@@ -16,7 +16,7 @@
                 <div class="col-md-7 mb-3">
                     <h4 class="fw-bold mb-3">Leaderboards</h4>
                     <div class="container p-3 shadow-sm rounded-4 bg-light empCon vstack gap-2">
-                        <EmployeeCard v-for="(user, index) in rnkUsers" :key="index" :name="user.name"
+                        <EmployeeCard v-for="(user, index) in rnkUsers.slice(0, 5)" :key="index" :name="user.name"
                             :profile-pic="user.profilePic" :score="user.score" :rank="index + 1" />
                     </div>
                 </div>
@@ -38,6 +38,7 @@
             </div>
         </div>
 
+        <!-- Modal -->
         <div id="viewAll" class="modal fade">
             <div class="modal-dialog modal-md">
                 <div class="modal-content p-5 bg-light border-0 rounded-5">
@@ -81,123 +82,128 @@ export default {
                 name: 'Swan Yi Phyo',
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/1.jpg',
-                timestamp: 11
+                timestamp: 11,
+                score: 2980
+            },
+            {
+                name: 'Viviana',
+                department: 'Marketing',
+                profilePic: 'https://randomuser.me/api/portraits/women/18.jpg',
+                timestamp: 12,
+                score: 2900
             },
             {
                 name: 'Zarni Tun',
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/2.jpg',
-                timestamp: 19
+                timestamp: 19,
+                score: 1800
             },
             {
                 name: "Nay Ye' Linn",
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/21.jpg',
-                timestamp: 20
+                timestamp: 20,
+                score: 2000
             },
             {
                 name: "Min Thuta",
                 department: 'PR',
                 profilePic: 'https://randomuser.me/api/portraits/men/31.jpg',
-                timestamp: 20
+                timestamp: 20,
+                score: 900
             },
             {
                 name: "Phyoe Than Htike",
                 department: 'Sales',
                 profilePic: 'https://randomuser.me/api/portraits/men/22.jpg',
-                timestamp: 15
+                timestamp: 15,
+                score: 1500
             },
             {
                 name: "Phyoe Thuta",
                 department: 'CS',
                 profilePic: 'https://randomuser.me/api/portraits/men/23.jpg',
-                timestamp: 21
+                timestamp: 21,
+                score: 2000
             },
             {
                 name: "Justin",
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/20.jpg',
-                timestamp: 13
+                timestamp: 13,
+                score: 1800
             },
             {
                 name: "Aung Ko Hein",
                 department: 'Finance',
                 profilePic: 'https://randomuser.me/api/portraits/men/25.jpg',
-                timestamp: 13
+                timestamp: 13,
+                score: 1050
             },
             {
                 name: "Rose",
                 department: 'HR',
                 profilePic: 'https://randomuser.me/api/portraits/women/20.jpg',
-                timestamp: 31
+                timestamp: 31,
+                score: 1400
             },
             {
                 name: "Carelo",
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/19.jpg',
-                timestamp: 30
+                timestamp: 30,
+                score: 1200
             },
             {
                 name: "John Doe",
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/15.jpg',
-                timestamp: 22
+                timestamp: 22,
+                score: 1100
             },
             {
                 name: "Miss Smith",
                 department: 'HR',
                 profilePic: 'https://randomuser.me/api/portraits/women/20.jpg',
-                timestamp: 17
+                timestamp: 17,
+                score: 1600
             },
             {
                 name: 'Kaung Htut Hlaing',
                 department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/6.jpg',
-                timestamp: 15
+                timestamp: 15,
+                score: 2800
             },
             {
                 name: 'Khun Shine Sithu',
                 department: 'QA',
                 profilePic: 'https://randomuser.me/api/portraits/men/7.jpg',
-                timestamp: 20
-            }
-        ])
-
-        let leaders = ref([
-            {
-                name: 'Swan Yi Phyo',
-                profilePic: 'https://randomuser.me/api/portraits/men/1.jpg',
-                score: 2980
-            },
-            {
-                name: 'Viviana',
-                profilePic: 'https://randomuser.me/api/portraits/women/19.jpg',
-                score: 2900
-            },
-            {
-                name: 'Kaung Htut Hlaing',
-                profilePic: 'https://randomuser.me/api/portraits/men/6.jpg',
-                score: 2800
-            },
-            {
-                name: 'Myat Thu Kyaw',
-                profilePic: 'https://randomuser.me/api/portraits/men/8.jpg',
-                score: 2700
+                timestamp: 20,
+                score: 1000
             },
             {
                 name: 'Win Myint Kyaw',
+                department: 'IT',
                 profilePic: 'https://randomuser.me/api/portraits/men/9.jpg',
+                timestamp: 20,
                 score: 2600
+            },
+            {
+                name: 'Myat Thu Kyaw',
+                department: 'IT',
+                profilePic: 'https://randomuser.me/api/portraits/men/8.jpg',
+                timestamp: 18,
+                score: 2700
             }
         ])
 
-        let rnkUsers = computed(() => {
-            return [...leaders.value].sort((a, b) => b.score - a.score);
-        })
+        let rnkUsers = computed(() =>  [...users.value].sort((a, b) => b.score - a.score) )
 
         onMounted(() => setTimeout(() => loading.value = false, 800))
 
-        return { loading, users, leaders, rnkUsers }
+        return { loading, users, rnkUsers }
     }
 }
 </script>

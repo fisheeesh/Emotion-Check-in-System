@@ -24,6 +24,8 @@
 </template>
 
 <script>
+import { computed } from 'vue';
+
 export default {
     props: {
         name: {
@@ -46,9 +48,9 @@ export default {
             required: true
         }
     },
-    computed: {
-        medalColorClass() {
-            switch (this.rank) {
+    setup(props){
+        let medalColorClass = computed(() =>{
+            switch(props.rank){
                 case 1:
                     return 'text-warning'; 
                 case 2:
@@ -62,7 +64,9 @@ export default {
                 default:
                     return '';
             }
-        }
+        })
+
+        return { medalColorClass }
     }
 };
 </script>
