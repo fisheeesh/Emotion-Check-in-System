@@ -1,62 +1,32 @@
 <template>
     <section>
         <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8">
-            <Spinner/>
+            <Spinner />
         </div>
         <div v-else class="container-fluid">
             <FilterNav :current="current" @filterBy="current = $event" />
-            <div v-if="current === 'weekly'">
-                <div class="row align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <GreetCard />
-                    </div>
-                    <div class="col-md-7">
-                        <WarningCard />
-                    </div>
+            <div class="row align-items-stretch">
+                <div class="col-md-5 mb-2">
+                    <GreetCard />
                 </div>
-                <div class="row my-4 align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <OverviewCard />
-                    </div>
-                    <div class="col-md-7">
-                        <LineChart />
-                    </div>
+                <div class="col-md-7">
+                    <WarningCard />
                 </div>
             </div>
-            <div v-if="current === 'monthly'">
-                <div class="row align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <GreetCard />
+            <div class="row my-4 align-items-stretch">
+                <div class="col-md-5 mb-2">
+                    <div v-if="current === 'Weekly'">
+                        <OverviewCard :title="current" positive="95" neutral="4" negative="1"/>
                     </div>
-                    <div class="col-md-7">
-                        <WarningCard />
+                    <div v-if="current === 'Monthly'">
+                        <OverviewCard :title="current" positive="90" neutral="9" negative="1"/>
                     </div>
-                </div>
-                <div class="row my-4 align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <MonthlyOver />
-                    </div>
-                    <div class="col-md-7">
-                        <MonthlyLine />
+                    <div v-if="current === 'Yearly'">
+                        <OverviewCard :title="current" positive="88" neutral="7" negative="5"/>
                     </div>
                 </div>
-            </div>
-            <div v-if="current === 'yearly'">
-                <div class="row align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <GreetCard />
-                    </div>
-                    <div class="col-md-7">
-                        <WarningCard />
-                    </div>
-                </div>
-                <div class="row my-4 align-items-stretch">
-                    <div class="col-md-5 mb-2">
-                        <YearlyOver />
-                    </div>
-                    <div class="col-md-7">
-                        <YearlyLine />
-                    </div>
+                <div class="col-md-7">
+                    <LineChart />
                 </div>
             </div>
         </div>
@@ -89,7 +59,7 @@ export default {
         Spinner
     },
     setup() {
-        let current = ref('weekly')
+        let current = ref('Weekly')
         let loading = ref(true)
 
         onMounted(() => {
@@ -103,6 +73,4 @@ export default {
 }
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
