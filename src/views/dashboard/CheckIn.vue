@@ -173,20 +173,6 @@ export default {
         let rnkUsers = computed(() => [...users.value].sort((a, b) => b.score - a.score))
 
         /**
-         * ? Filter department based on dropdown current item value
-         * ? If current item value is 'Overall', return all users which is already ranked
-         * ? If current item value is one of the unique departments value, return all users in that department
-         */
-        const filterDepEmp = computed(() => {
-            if (current.value === 'Overall') return rnkUsers.value
-            else {
-                return users.value.filter(user => {
-                    return user.department === current.value
-                })
-            }
-        })
-
-        /**
          * ? Get all the departments which are duplicated
          */
         users.value.forEach(user => {
@@ -194,8 +180,8 @@ export default {
         })
 
         /**
-         * ! Filter unique departments (one dep per time)
-         */
+        * ! Filter unique departments (one dep per time)
+        */
         const uniqueDep = computed(() => {
             return allDep.value.filter((dep, index, array) => {
                 return array.indexOf(dep) === index
@@ -208,12 +194,27 @@ export default {
          * ? and change the text content of the button
          */
         const filterDep = (dep) => {
+            //check the method is worked or not by consoling its parameter
             console.log(dep)
             document.getElementById('dropdownMenuBtn').textContent = dep
             current.value = dep
             console.log(current.value)
             console.log(filterDepEmp.value)
         }
+
+        /**
+         * ? Filter department based on dropdown current item value
+         * ? If current item value is 'Overall', return all users which is already ranked
+         * ? If current item value is one of the unique departments value, return all users in that department
+         */
+        const filterDepEmp = computed(() => {
+            if (current.value === 'Overall') return rnkUsers.value
+            else {
+                return users.value.filter(user => {
+                    return user.department === current.value
+                })
+            }
+        })
 
         /**
          * ? Loading animation
@@ -231,6 +232,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
