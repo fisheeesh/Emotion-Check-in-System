@@ -11,7 +11,7 @@
                                     Warning: Khun Shine's weekly mood is mostly negative.
                                 </h6>
                             </div>
-                            <div class="button btn btn-info text-white" data-bs-toggle="modal" data-bs-target="#modal">
+                            <div class="button btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modal">
                                 View Details
                             </div>
                         </div>
@@ -22,23 +22,23 @@
 
         <div id="modal" class="modal fade">
             <div class="modal-dialog modal-md">
-                <div class="modal-content p-5 bg-warning border-0 rounded-5">
+                <div class="modal-content p-5 text-dark bg-white border-0 rounded-5">
                     <div class="modal-header">
-                        <h5 class="modal-title text-white">Weekly Mood Analysis</h5>
+                        <h5 class="modal-title">Weekly Mood Analysis</h5>
                         <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
-                        <h6 class="text-white">Summary:</h6>
-                        <p class="text-white">
+                        <h6 class="">Summary:</h6>
+                        <p class="">
                             This week, Khun Shine reported several negative moods that might be impacting productivity
                             and well-being.
                         </p>
 
-                        <h6 class="text-white">Mood Distribution:</h6>
+                        <h6 class="">Mood Distribution:</h6>
                         
 
-                        <h6 class="text-white mt-3">Mood Details:</h6>
-                        <ul class="text-white">
+                        <h6 class=" mt-3">Mood Details:</h6>
+                        <ul class="">
                             <li>Monday: Sad</li>
                             <li>Tuesday: Anxious</li>
                             <li>Wednesday: Frustrated</li>
@@ -46,8 +46,8 @@
                             <li>Friday: Happy</li>
                         </ul>
 
-                        <h6 class="text-white mt-3">Recommendations:</h6>
-                        <p class="text-white">
+                        <h6 class=" mt-3">Recommendations:</h6>
+                        <p class="">
                             - Encourage Khun Shine to take short breaks during work.<br>
                             - Consider scheduling one-on-one check-ins to discuss any concerns.<br>
                             - Provide resources for stress management and mood improvement.
