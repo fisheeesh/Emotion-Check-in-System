@@ -17,8 +17,9 @@
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="fw-bold ms-2">Leaderboards</h4>
                         <div class="dropdown">
-                            <button style="width: 140px" class="d-flex justify-content-between align-items-center btn btn-lg btn-primary text-white dropdown-toggle" id="dropdownMenuBtn"
-                                type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <button style="width: 140px"
+                                class="d-flex justify-content-between align-items-center btn btn-lg btn-primary text-white dropdown-toggle"
+                                id="dropdownMenuBtn" type="button" data-bs-toggle="dropdown" aria-expanded="false">
                                 Overall
                             </button>
                             <ul class="dropdown-menu">
@@ -29,15 +30,16 @@
                         </div>
                     </div>
                     <div class="container p-3 shadow-sm rounded-4 bg-light empCon vstack gap-2">
-                        <EmployeeCard v-for="(user, index) in filterDepEmp.slice(0, 5)" :key="index"
-                            :name="user.name" :profile-pic="user.profilePic" :score="user.score" :rank="index + 1"
+                        <EmployeeCard v-for="(user, index) in filterDepEmp.slice(0, 5)" :key="index" :name="user.name"
+                            :profile-pic="user.profilePic" :score="user.score" :rank="index + 1"
                             :department="user.department" />
                     </div>
                 </div>
-                <div class="col-md-5 hover">
-                    <div class="d-flex justify-content-between align-items-center me-3 mb-3">
+                <div class="col-md-5 syp">
+                    <div class="d-flex justify-content-between align-items-center me-3" style="margin-bottom: 20px">
                         <h4 class="fw-bold mb-3">Check-ins</h4>
-                        <h6 clas="view" data-bs-toggle="modal" data-bs-target="#viewAll">View All</h6>
+                        <h6 class="view hover-text" data-bs-toggle="modal" data-bs-target="#viewAll"
+                            style="cursor: pointer; color: grey;">View All</h6>
                     </div>
                     <div class="container p-3 shadow-sm rounded-4 bg-light empCon vstack gap-2">
                         <div class="row">
@@ -200,4 +202,6 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+
+</style>

@@ -141,3 +141,11 @@
 .dropdown-item {
   cursor: pointer;
 }
+
+.hover-text {
+  transition: color 0.3s ease !important;
+}
+
+.hover-text:hover {
+  color: var(--sidebar-item-color) !important;
+}

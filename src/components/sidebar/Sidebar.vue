@@ -48,7 +48,7 @@
         <div class="modal fade" id="logoutModal">
             <div class="modal-dialog mt-5">
                 <div class="modal-content p-4 shadow-sm bg-light">
-                    <h2 class="modal-title fw-bolder text-primary fs-3">Confirm Logout</h2>
+                    <h2 class="modal-title fw-bolder text-dark fs-3">Confirm Logout</h2>
                     <hr>
                     <h6 class="text-muted">Are you sure you want to logout?</h6>
                     <div class="d-flex justify-content-end gap-2 mt-4">
