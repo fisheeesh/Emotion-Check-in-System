@@ -204,13 +204,13 @@ export default {
 
         /**
          * ? Filter department based on dropdown current item value
-         * ? If current item value is 'Overall', return all users which is already ranked
-         * ? If current item value is one of the unique departments value, return all users in that department
+         * ? If current item value is 'Overall', return all rnked users 
+         * ? If current item value is one of the unique departments value, return all rnked users in that department
          */
         const filterDepEmp = computed(() => {
             if (current.value === 'Overall') return rnkUsers.value
             else {
-                return users.value.filter(user => {
+                return rnkUsers.value.filter(user => {
                     return user.department === current.value
                 })
             }
