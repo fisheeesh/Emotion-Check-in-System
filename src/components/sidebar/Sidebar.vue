@@ -31,7 +31,7 @@
 
             <span :class="{ 'rotate-180': collapsed }"
                 class="collapse-icon text-primary rounded-circle bg-white position-absolute d-flex align-items-center justify-content-center"
-                :style="{ left: collapsed ? '87px' : '263px' }" @click="toggleSidebar">
+                :style="{ left: collapsed ? '87px' : '262px' }" @click="toggleSidebar">
                 <i class="fas fa-angle-double-left"></i>
             </span>
 

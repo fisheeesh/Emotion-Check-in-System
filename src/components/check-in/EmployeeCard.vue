@@ -9,7 +9,7 @@
                             <img :src="profilePic" width="50" class="rounded-circle" alt="">
                         </div>
                         <h3 class="fw-bold my-0 text-truncate" style="font-size: clamp(1rem, 1.5vw, 1.25rem);">
-                            {{ name }}
+                            {{ name }} <span class="text-muted fw-normal fs-6">( {{ department }} )</span>
                         </h3>
                         <div class="d-flex align-items-center gap-2">
                             <p class="mb-0 text-truncate" style="font-size: clamp(0.875rem, 1vw, 1rem);">{{ score }}
@@ -46,21 +46,26 @@ export default {
         rank: {
             type: Number,
             required: true
+        },
+        department: {
+            type: String,
+            default: 'N/A',
+            required: true
         }
     },
-    setup(props){
-        let medalColorClass = computed(() =>{
-            switch(props.rank){
+    setup(props) {
+        let medalColorClass = computed(() => {
+            switch (props.rank) {
                 case 1:
-                    return 'text-warning'; 
+                    return 'text-warning';
                 case 2:
-                    return 'text-secondary'; 
+                    return 'text-secondary';
                 case 3:
-                    return 'third'; 
+                    return 'third';
                 case 4:
                     return 'fourth';
                 case 5:
-                    return 'fifth'; 
+                    return 'fifth';
                 default:
                     return '';
             }
@@ -71,6 +76,4 @@ export default {
 };
 </script>
 
-<style>
-
-</style>
+<style></style>

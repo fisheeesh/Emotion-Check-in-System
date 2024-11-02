@@ -1,5 +1,5 @@
 :root {
-  --sidebar-bg-color: #F1F5F9;
+  --sidebar-bg-color: #f3f3f3;
   --sidebar-item-active: #E0E1FF;
   --sidebar-item-color: #3085fe;
 }
@@ -126,4 +126,8 @@
   height: 30px;
   background-color: #c4bfbf;
   margin: 0;
+}
+
+.dropdown-item {
+  cursor: pointer;
 }
