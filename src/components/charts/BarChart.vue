@@ -32,21 +32,6 @@ export default {
                     borderWidth: 1
                 },
                 {
-                    label: 'Late',
-                    data: [2, 4, 2, 1, 2, 3, 4, 6],
-                    backgroundColor: [
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)',
-                        'rgb(255, 205, 86, 1)'
-                    ],
-                    borderWidth: 1
-                },
-                {
                     label: 'Absence',
                     data: [0, 1, 1, 0, 1, 0, 0, 1],
                     backgroundColor: [

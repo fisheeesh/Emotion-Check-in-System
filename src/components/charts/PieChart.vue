@@ -15,16 +15,14 @@ export default {
         const data = {
             labels: [
                 'On Time',
-                'Late',
                 'Absence'
             ],
             datasets: [{
                 label: 'Percentage',
 
-                data: [80, 17, 3],
+                data: [80, 20],
                 backgroundColor: [
                     'rgb(76, 175, 80)',
-                    'rgb(255, 205, 86)',
                     'rgb(255, 0,0)'
                 ],
                 hoverOffset: 4

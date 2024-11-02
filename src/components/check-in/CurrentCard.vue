@@ -8,7 +8,8 @@
             </div>
         </div>
         <div>
-            <i class="fas fa-circle me-2" :class="timestamp < 20 ? 'text-success' : 'text-warning'"></i><span class="text-muted">{{ timestamp }} mins ago</span>
+            <!-- <i class="fas fa-circle me-2" :class="timestamp < 20 ? 'text-success' : 'text-warning'"></i> -->
+            <span class="text-muted">{{ timestamp }} mins ago</span>
         </div>
     </div>
 </template>

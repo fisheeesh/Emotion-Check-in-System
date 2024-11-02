@@ -114,3 +114,16 @@
   display: flex;
   flex-direction: column;
 }
+
+.login-title {
+  color: #00324E !important;
+  font-size: 14px !important;
+}
+
+.vertical-line {
+  display: inline-block;
+  width: 1px;
+  height: 30px;
+  background-color: #c4bfbf;
+  margin: 0;
+}

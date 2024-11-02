@@ -12,7 +12,7 @@ let logIn = async (email, password) => {
     } catch (err) {
         switch (err.code) {
             case 'auth/too-many-requests':
-                error.value = "Too many requests for this account. Please try again later.";
+                error.value = "Warning: Multiple failed login attempts detected. This may prevent access with correct credentials. Please try again after some time.";
                 break;
             case "auth/invalid-email":
                 error.value = "Invalid email format.";
