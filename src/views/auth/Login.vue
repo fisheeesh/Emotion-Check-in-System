@@ -7,15 +7,7 @@
                     <div class="col-md-5 offset-md-4">
                         <div class="card">
                             <div class="card-body p-3">
-                                <div class="d-flex gap-3 justify-content-center align-items-center">
-                                    <div class="image-container">
-                                        <img src="../../assets/images/half-logo.png" alt="" width="100">
-                                    </div>
-                                    <div class="vertical-line"></div>
-                                    <div class="text-container">
-                                        <h6 class="mt-3 login-title text-muted fs-6 ms-1">Emotion Check-in System</h6>
-                                    </div>
-                                </div>
+                                <ATALOGO />
                                 <p class="mt-2 text-center text-muted">Email - emotion@ata.it.th | Password - ata2024
                                 </p>
                                 <div>
@@ -65,8 +57,12 @@
 import { ref, computed, onMounted } from "vue";
 import { useRouter } from "vue-router";
 import useSignIn from "@/composables/auth/useSignIn";
+import ATALOGO from "@/components/logo/ATALOGO.vue";
 
 export default {
+    components: {
+        ATALOGO
+    },
     setup() {
         const router = useRouter();
         const email = ref("");

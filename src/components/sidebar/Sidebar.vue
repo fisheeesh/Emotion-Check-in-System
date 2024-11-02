@@ -6,17 +6,23 @@
             :style="{ width: sidebarWidth }">
             <h1 class="mt-4 mb-5">
                 <div v-if="collapsed">
-                    <img class="ms-1" style="margin-left: 3px; transition: all 0.3s linear;"
-                        src="../../assets/images/half-logo.png" width="50" alt="mfu.logo">
-                </div>
-                <div v-else class="flexing ms-3 d-flex justify-content-start align-items-center overflow-hidden">
-                    <div>
-                        <img style="transition: all 0.3s ease-in-out;" src="../../assets/images/full-logo.png"
-                            width="200" alt="mfu.logo">
+                    <div class="ms-2">
+                        <img style="transition: all 0.3s linear;" src="../../assets/images/half-logo.png" width="70"
+                            alt="mfu.logo">
                     </div>
                 </div>
+                <div v-else class="flexing ms-2 d-flex justify-content-start align-items-center overflow-hidden">
+                    <div>
+                        <img src="../../assets/images/half-logo.png" width="70" alt="mfu.logo">
+                    </div>
+                    <!-- <div class="vertical-line"></div> -->
+                    <div class="d-flex flex-column ms-2">
+                        <span class="act fw-bold text-dark">Emotion Check-in System</span>
+                    </div>
+
+                </div>
             </h1>
-            <div>
+            <div class="px-3">
                 <SidebarLink to="/admin/dashboard" icon="fas fa-columns">Dashboard</SidebarLink>
                 <SidebarLink to="/admin/check-in" icon="fas fa-calendar-check">Check in</SidebarLink>
             </div>
@@ -25,15 +31,17 @@
 
             <span :class="{ 'rotate-180': collapsed }"
                 class="collapse-icon text-primary rounded-circle bg-white position-absolute d-flex align-items-center justify-content-center"
-                :style="{ left: collapsed ? '55px' : '270px' }" @click="toggleSidebar">
+                :style="{ left: collapsed ? '87px' : '263px' }" @click="toggleSidebar">
                 <i class="fas fa-angle-double-left"></i>
             </span>
 
-            <button data-bs-toggle="modal" data-bs-target="#logoutModal"
-                class="logout-button btn btn-danger w-100 d-flex align-items-center justify-content-center text-white">
-                <i class="icon fas fa-sign-out-alt"></i>
-                <span class="ms-2" v-if="!collapsed">Logout</span>
-            </button>
+            <div class="px-3">
+                <button data-bs-toggle="modal" data-bs-target="#logoutModal"
+                    class="logout-button btn btn-danger w-100 d-flex align-items-center justify-content-center text-white">
+                    <i class="icon fas fa-sign-out-alt"></i>
+                    <span class="ms-2" v-if="!collapsed">Logout</span>
+                </button>
+            </div>
         </div>
 
         <!-- Logout Modal -->
@@ -60,6 +68,7 @@ import getUser from '@/composables/auth/getUser';
 import SidebarLink from './SidebarLink'
 import { collapsed, toggleSidebar, sidebarWidth } from './sidebarState'
 import useSignOut from '@/composables/auth/useSignOut';
+import ATALOGO from '../logo/ATALOGO.vue';
 
 export default {
     components: { SidebarLink },
@@ -111,14 +120,10 @@ export default {
 }
 
 .flexing .act {
-    font-size: 10px;
+    font-size: 12px;
     font-weight: 400;
     letter-spacing: 1px;
-}
-
-.flexing .mfu {
-    font-size: 20px;
-    letter-spacing: 1px;
+    margin-top: 0.6rem;
 }
 
 .logout-button {
