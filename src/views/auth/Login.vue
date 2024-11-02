@@ -27,6 +27,7 @@
                                                 placeholder="password" :class="{ 'is-invalid': showError('password') }"
                                                 class="form-control">
                                             <span @click="isVisible = !isVisible"
+                                                :class="{ move: showError('password') }"
                                                 class="material-symbols-outlined eye">{{ isVisible ? 'visibility' :
                                                     'visibility_off' }}</span>
                                             <div class="invalid-feedback">Password is required</div>
