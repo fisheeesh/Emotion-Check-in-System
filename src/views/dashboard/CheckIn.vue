@@ -16,6 +16,7 @@
                 <div class="col-md-7 mb-3">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="fw-bold ms-2">Leaderboards</h4>
+                        <!-- Dropdown for filter department -->
                         <div class="dropdown">
                             <button style="width: 140px"
                                 class="d-flex justify-content-between align-items-center btn btn-lg btn-primary text-white dropdown-toggle"
@@ -23,6 +24,7 @@
                                 Overall
                             </button>
                             <ul class="dropdown-menu">
+                                <!-- Display unique departments in dropdown item -->
                                 <li @click="filterDep(d)" v-for="(d, index) in uniqueDep" :key="index"><span
                                         class="dropdown-item" href="#">{{ d
                                         }}</span></li>
@@ -30,6 +32,7 @@
                         </div>
                     </div>
                     <div class="container p-3 shadow-sm rounded-4 bg-light empCon vstack gap-2">
+                        <!-- Display top 5 employees depends on dropdonwn current item -->
                         <EmployeeCard v-for="(user, index) in filterDepEmp.slice(0, 5)" :key="index" :name="user.name"
                             :profile-pic="user.profilePic" :score="user.score" :rank="index + 1"
                             :department="user.department" />
@@ -92,7 +95,13 @@ export default {
     },
     setup() {
         let loading = ref(true)
+        /**
+         * ? Store all departments
+         */
         const allDep = ref([])
+        /**
+         * ? as dropdown current item
+         */
         const current = ref('Overall')
 
         let users = ref([
@@ -116,9 +125,6 @@ export default {
             { name: "Rose", department: 'HR', profilePic: 'https://randomuser.me/api/portraits/women/20.jpg', timestamp: 31, score: 1400 },
             { name: "Miss Smith", department: 'HR', profilePic: 'https://randomuser.me/api/portraits/women/22.jpg', timestamp: 17, score: 1600 },
             { name: 'John Miller', department: 'HR', profilePic: 'https://randomuser.me/api/portraits/men/29.jpg', timestamp: 19, score: 1700 },
-            { name: 'Jane Doe', department: 'HR', profilePic: 'https://randomuser.me/api/portraits/women/30.jpg', timestamp: 21, score: 2100 },
-            { name: 'Sarah Lee', department: 'HR', profilePic: 'https://randomuser.me/api/portraits/women/23.jpg', timestamp: 14, score: 2500 },
-            { name: 'Timothy Chang', department: 'HR', profilePic: 'https://randomuser.me/api/portraits/men/31.jpg', timestamp: 23, score: 1800 },
 
             // Sales Department
             { name: "Phyoe Than Htike", department: 'Sales', profilePic: 'https://randomuser.me/api/portraits/men/22.jpg', timestamp: 15, score: 1500 },
@@ -161,8 +167,16 @@ export default {
             { name: 'Amy Foster', department: 'PR', profilePic: 'https://randomuser.me/api/portraits/women/42.jpg', timestamp: 19, score: 1400 },
         ]);
 
+        /**
+         * ? Rank users by sort method(descending) based on their score
+         */
         let rnkUsers = computed(() => [...users.value].sort((a, b) => b.score - a.score))
 
+        /**
+         * ? Filter department based on dropdown current item value
+         * ? If current item value is 'Overall', return all users which is already ranked
+         * ? If current item value is one of the unique departments value, return all users in that department
+         */
         const filterDepEmp = computed(() => {
             if (current.value === 'Overall') return rnkUsers.value
             else {
@@ -172,16 +186,27 @@ export default {
             }
         })
 
+        /**
+         * ? Get all the departments which are duplicated
+         */
         users.value.forEach(user => {
             allDep.value.push(user.department)
         })
 
+        /**
+         * ! Filter unique departments (one dep per time)
+         */
         const uniqueDep = computed(() => {
             return allDep.value.filter((dep, index, array) => {
                 return array.indexOf(dep) === index
             })
         })
 
+        /**
+         * ? This metod will call everytime user change item on dropdown
+         * ? and set that item to current value
+         * ? and change the text content of the button
+         */
         const filterDep = (dep) => {
             console.log(dep)
             document.getElementById('dropdownMenuBtn').textContent = dep
@@ -190,6 +215,10 @@ export default {
             console.log(filterDepEmp.value)
         }
 
+        /**
+         * ? Loading animation
+         * ? Add Overall as the first item in dropdown to render all the rnk users
+         */
         onMounted(() => {
             setTimeout(() => loading.value = false, 800)
             console.log(allDep.value)

@@ -18,7 +18,7 @@ export default {
                 labels: ['Human Resources', 'Customer Support', 'Quality Assurance', 'IT', 'Sales', 'Finance', 'Marketing', 'Public Relations'],
                 datasets: [{
                     label: 'OnTime',
-                    data: [4, 15, 17, 19, 12, 22, 11, 23],
+                    data: [3, 15, 17, 19, 12, 22, 11, 23],
                     backgroundColor: [
                         'rgb(76, 175, 80, 1)',
                         'rgb(76, 175, 80, 1)',
