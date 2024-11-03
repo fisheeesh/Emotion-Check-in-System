@@ -36,10 +36,18 @@ export default {
         dayOfWeek() {
             return this.currentDate.toLocaleDateString('en-US', { weekday: 'long' });
         }
+    },
+    mounted() {
+        // Update the date every minute
+        this.interval = setInterval(() => {
+            this.currentDate = new Date();
+        }, 500); // 60000 milliseconds = 1 minute
+    },
+    beforeUnmount() {
+        // Clear the interval when the component is destroyed to avoid memory leaks
+        clearInterval(this.interval);
     }
 }
 </script>
 
-<style>
-
-</style>
+<style></style>

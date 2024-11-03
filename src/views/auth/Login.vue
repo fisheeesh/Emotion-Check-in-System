@@ -4,7 +4,7 @@
         <section class="form mt-8">
             <div class="container">
                 <div class="row">
-                    <div class="col-md-5 offset-md-4">
+                    <div class="col-md-5 mx-auto">
                         <div class="card">
                             <div class="card-body p-3">
                                 <ATALOGO />

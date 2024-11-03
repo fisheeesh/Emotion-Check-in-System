@@ -11,7 +11,7 @@
                                     Warning: Khun Shine's weekly mood is mostly negative.
                                 </h6>
                             </div>
-                            <div class="button btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#modal">
+                            <div class="button btn btn-light" data-bs-toggle="modal" data-bs-target="#modal">
                                 View Details
                             </div>
                         </div>

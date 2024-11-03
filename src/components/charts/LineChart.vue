@@ -46,7 +46,7 @@ export default {
                                 bottom: 10
                             },
                             font: {
-                                size: 16,
+                                size: 22,
                                 weight: 'bold'
                             },
                             color: '#333'
