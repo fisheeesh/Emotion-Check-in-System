@@ -167,6 +167,15 @@ export default {
             { name: 'Amy Foster', department: 'PR', profilePic: 'https://randomuser.me/api/portraits/women/42.jpg', timestamp: 19, score: 1400 },
         ]);
 
+        // Shuffle the users array
+        function shuffleArray(array) {
+            for (let i = array.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [array[i], array[j]] = [array[j], array[i]];
+            }
+        }
+        shuffleArray(users.value);
+
         /**
          * ? Rank users by sort method(descending) based on their score
          */
