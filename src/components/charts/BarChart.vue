@@ -51,15 +51,24 @@ export default {
             options: {
                 maintainAspectRatio: false,
                 plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                        }
+                    },
                     title: {
                         display: true,
                         text: 'Daily Check-in of Each Department',
                         font: {
-                            size: 18
+                            size: 24
                         },
                         padding: {
                             bottom: 20
-                        }
+                        },
+                        color: '#000000'
                     }
                 },
                 scales: {

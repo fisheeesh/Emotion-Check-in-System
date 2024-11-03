@@ -3,7 +3,7 @@
         <div class="card-body ">
             <div class="d-flex justify-content-between align-items-center">
                 <h4 class="fw-bold mb-0">{{ title }} Overview</h4>
-                <i class="fas fa-question-circle text-secondary"></i>
+                <i class="fas fa-question-circle text-secondary ques"></i>
             </div>
             <div class="d-flex flex-column justify-content-start mt-4 vstack gap-4">
                 <div class="d-flex align-items-center justify-content-start gap-5">
@@ -62,5 +62,12 @@ export default {
 <style>
 .positive {
     color: rgb(0, 192, 0);
+}
+.ques{
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.ques:hover{
+    color: rgb(155, 155, 155) !important;
 }
 </style>

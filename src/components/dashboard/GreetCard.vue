@@ -1,5 +1,5 @@
 <template>
-    <div class="card border-0 shadow-sm px-3 bg-info rounded-4">
+    <div class="card border-0 shadow-sm px-3 bg-primary rounded-4">
         <div class="card-body">
             <div class="row">
                 <div

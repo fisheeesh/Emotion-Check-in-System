@@ -1,7 +1,7 @@
 <template>
     <div class="card border-0 shadow-sm rounded-4 bg-light">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
-            <h5 class="fw-bold">Today Check-in</h5>
+            <h4 class="fw-bold">Today Check-in</h4>
             <canvas id="myChart" class="chart-canvas"></canvas>
         </div>
     </div>
@@ -19,7 +19,6 @@ export default {
             ],
             datasets: [{
                 label: 'Percentage',
-
                 data: [80, 20],
                 backgroundColor: [
                     'rgb(76, 175, 80)',
@@ -34,6 +33,14 @@ export default {
             data: data,
             options: {
                 plugins: {
+                    legend: {
+                        labels: {
+                            font: {
+                                size: 14,
+                                weight: 'bold'
+                            },
+                        }
+                    },
                     tooltip: {
                         callbacks: {
                             label: (tooltipItem) => {
