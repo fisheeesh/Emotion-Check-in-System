@@ -58,19 +58,24 @@ export default {
                                     size: 14,
                                     weight: 'bold'
                                 },
-                                // Use a custom legend shape as line instead of rectangle
-                                usePointStyle: true,
-                                pointStyle: 'line'
+                                usePointStyle: true, // Use line instead of a rectangle in the legend
+                                pointStyle: 'line' // Sets the legend symbol to a line
                             }
                         }
                     },
                     elements: {
                         line: {
-                            tension: 0
+                            tension: 0, // Set this if you want straight lines
+                            borderWidth: 2 // This will set the thickness of the line in the legend
                         }
                     }
                 }
             };
+
+            // Ensure each dataset has a defined border width in chartDatas:
+            props.chartDatas.datasets.forEach(dataset => {
+                dataset.borderWidth = 3; // Adjust to desired thickness
+            });
 
             new Chart(ctx, config);
         })
