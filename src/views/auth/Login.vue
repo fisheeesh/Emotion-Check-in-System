@@ -15,7 +15,7 @@
                                         <div class="mb-3">
                                             <label for="username" class="form-label">Email <span
                                                     class="text-danger">*</span></label>
-                                            <input autocomplete="off" v-model="email" type="text"
+                                            <input autocomplete="off" v-model="email" type="email"
                                                 :class="{ 'is-invalid': showError('email') }" class="form-control"
                                                 placeholder="Email" id="username">
                                             <div class="invalid-feedback">Email is required</div>
@@ -151,7 +151,7 @@ export default {
 
                 if (lockout.value) return;
 
-                const res = await logIn(email.value, password.value);
+                const res = await logIn(email.value.trim(), password.value.trim());
 
                 if (res) {
                     router.push("/admin");
