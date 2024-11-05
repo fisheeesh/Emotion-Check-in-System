@@ -1,7 +1,7 @@
 <template>
     <section>
-        <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8">
-            <Spinner />
+        <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8 pt-6">
+            <PulseLoader :color="'#3085fe'" />
         </div>
         <div v-else class="container-fluid pb-5 gg">
             <div class="row mt-4 align-items-stretch">
@@ -39,7 +39,8 @@
                     </div>
                 </div>
                 <div class="col-md-5 syp">
-                    <div class="d-flex justify-content-between align-items-center me-3 pt-2" style="margin-bottom: 20px">
+                    <div class="d-flex justify-content-between align-items-center me-3 pt-2"
+                        style="margin-bottom: 20px">
                         <h4 class="fw-bold ms-2">Check-ins</h4>
                         <h6 class="view hover-text" data-bs-toggle="modal" data-bs-target="#viewAll"
                             style="cursor: pointer; color: grey;">View All</h6>
@@ -85,13 +86,15 @@ import CurrentCard from '@/components/check-in/CurrentCard.vue';
 import EmployeeCard from '@/components/check-in/EmployeeCard.vue';
 import Spinner from '@/components/placeholder/Spinner.vue';
 import { computed, onMounted, ref } from 'vue';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
 export default {
     components: {
         PieChart,
         BarChart,
         EmployeeCard,
         CurrentCard,
-        Spinner
+        Spinner,
+        PulseLoader
     },
     setup() {
         let loading = ref(true)
@@ -230,7 +233,7 @@ export default {
          * ? Add Overall as the first item in dropdown to render all the rnk users
          */
         onMounted(() => {
-            setTimeout(() => loading.value = false, 500)
+            setTimeout(() => loading.value = false, 800)
             console.log(allDep.value)
             uniqueDep.value.unshift('Overall')
             console.log(uniqueDep.value)

@@ -1,7 +1,7 @@
 <template>
     <section>
-        <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8">
-            <Spinner />
+        <div v-if="loading" class="d-flex justify-content-center align-items-center mt-8 pt-6">
+            <PulseLoader :color="'#3085fe'" />
         </div>
         <div v-else class="container-fluid">
             <FilterNav :current="current" @filterBy="current = $event" />
@@ -49,6 +49,8 @@ import OverviewCard from '@/components/dashboard/OverviewCard.vue';
 import WarningCard from '@/components/dashboard/WarningCard.vue';
 import Spinner from '@/components/placeholder/Spinner.vue';
 import { onMounted, ref } from 'vue';
+import PulseLoader from 'vue-spinner/src/PulseLoader.vue';
+
 export default {
     components: {
         GreetCard,
@@ -56,7 +58,8 @@ export default {
         LineChart,
         OverviewCard,
         FilterNav,
-        Spinner
+        Spinner,
+        PulseLoader
     },
     setup() {
         let current = ref('Weekly')
@@ -156,7 +159,7 @@ export default {
         onMounted(() => {
             setTimeout(() => {
                 loading.value = false
-            }, 500)
+            }, 800)
         })
 
         return { current, loading, chartDatas }
