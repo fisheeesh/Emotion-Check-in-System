@@ -68,6 +68,6 @@ export default {
     transition: all 0.3s ease;
 }
 .ques:hover{
-    color: rgb(155, 155, 155) !important;
+    color: rgb(136, 136, 136) !important;
 }
 </style>

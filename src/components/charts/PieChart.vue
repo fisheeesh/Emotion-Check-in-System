@@ -2,7 +2,7 @@
     <div class="card border-0 shadow-sm rounded-4 bg-light">
         <div class="card-body d-flex flex-column justify-content-center align-items-center">
             <h4 class="fw-bold">Today Check-in</h4>
-            <canvas id="myChart" class="chart-canvas"></canvas>
+            <canvas id="myChart" class="chartCanvas"></canvas>
         </div>
     </div>
 </template>
@@ -21,15 +21,15 @@ export default {
                 label: 'Percentage',
                 data: [80, 20],
                 backgroundColor: [
-                    'rgb(76, 175, 80)',
-                    'rgb(255, 0,0)'
+                    '#BAEDBD',
+                    '#FB9F9F'
                 ],
                 hoverOffset: 4
             }]
         };
 
         new Chart(ctx, {
-            type: 'pie',
+            type: 'doughnut',
             data: data,
             options: {
                 plugins: {
@@ -59,4 +59,9 @@ export default {
 }
 </script>
 
-<style></style>
+<style>
+.chartCanvas {
+    width: 100%;
+    height: 370px !important;
+}
+</style>

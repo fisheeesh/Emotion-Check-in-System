@@ -4,7 +4,7 @@
             <Spinner />
         </div>
         <div v-else class="container-fluid pb-5 gg">
-            <div class="row my-4 align-items-stretch">
+            <div class="row mt-4 align-items-stretch">
                 <div class="col-md-4 mb-2">
                     <PieChart />
                 </div>
@@ -12,7 +12,7 @@
                     <BarChart />
                 </div>
             </div>
-            <div class="row">
+            <div class="row mt-3">
                 <div class="col-md-7 mb-3">
                     <div class="d-flex justify-content-between align-items-center mb-3">
                         <h4 class="fw-bold ms-2">Leaderboards</h4>
@@ -39,8 +39,8 @@
                     </div>
                 </div>
                 <div class="col-md-5 syp">
-                    <div class="d-flex justify-content-between align-items-center me-3" style="margin-bottom: 20px">
-                        <h4 class="fw-bold mb-3">Check-ins</h4>
+                    <div class="d-flex justify-content-between align-items-center me-3 pt-2" style="margin-bottom: 20px">
+                        <h4 class="fw-bold ms-2">Check-ins</h4>
                         <h6 class="view hover-text" data-bs-toggle="modal" data-bs-target="#viewAll"
                             style="cursor: pointer; color: grey;">View All</h6>
                     </div>
@@ -230,7 +230,7 @@ export default {
          * ? Add Overall as the first item in dropdown to render all the rnk users
          */
         onMounted(() => {
-            setTimeout(() => loading.value = false, 800)
+            setTimeout(() => loading.value = false, 500)
             console.log(allDep.value)
             uniqueDep.value.unshift('Overall')
             console.log(uniqueDep.value)

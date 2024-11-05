@@ -7,9 +7,9 @@
 </template>
 
 <script>
-import { Margin } from '@syncfusion/ej2-vue-charts';
 import { Chart } from 'chart.js/auto';
 import { onMounted } from 'vue';
+
 export default {
     props: {
         title: {
@@ -24,11 +24,11 @@ export default {
     setup(props) {
         onMounted(() => {
             const ctx = document.getElementById('myChart');
-            const labels = props.chartDatas.labels
             const data = {
-                labels: labels,
+                labels: props.chartDatas.labels,
                 datasets: props.chartDatas.datasets
             };
+
             const config = {
                 type: 'line',
                 data: data,
@@ -36,8 +36,8 @@ export default {
                     plugins: {
                         tooltip: {
                             enabled: true,
-                            mode: 'nearest',
-                            intersect: false
+                            mode: 'index', // Show tooltip for the nearest x-axis point
+                            intersect: false // Show tooltip across the entire vertical line
                         },
                         title: {
                             display: true,
@@ -47,7 +47,7 @@ export default {
                                 bottom: 10
                             },
                             font: {
-                                size: 24,
+                                size: 18,
                                 weight: 'bold'
                             },
                             color: '#333'
@@ -58,29 +58,56 @@ export default {
                                     size: 14,
                                     weight: 'bold'
                                 },
-                                usePointStyle: true, // Use line instead of a rectangle in the legend
-                                pointStyle: 'line' // Sets the legend symbol to a line
+                                usePointStyle: true,
+                                pointStyle: 'line'
                             }
                         }
                     },
                     elements: {
                         line: {
-                            tension: 0, // Set this if you want straight lines
-                            borderWidth: 2 // This will set the thickness of the line in the legend
+                            tension: 0.4,
+                            borderWidth: 2
+                        },
+                        point: {
+                            radius: 0 // Hide points
+                        }
+                    },
+                    interaction: {
+                        mode: 'index', // Ensure that the vertical line shows across the chart on hover
+                        intersect: false // Do not limit the hover effect to the points only
+                    },
+                    scales: {
+                        y: {
+                            min: -1,
+                            max: 1,
+                            ticks: {
+                                stepSize: 1
+                            },
+                            grid: {
+                                display: false // Hide all y-axis grid lines
+                            },
+                            border: {
+                                display: true,
+                                color: '#aaa'
+                            }
+                        },
+                        x: {
+                            // grid: {
+                            //     display: false // Hide x-axis grid lines
+                            // },
+                            border: {
+                                display: true,
+                                color: '#aaa'
+                            }
                         }
                     }
                 }
             };
 
-            // Ensure each dataset has a defined border width in chartDatas:
-            props.chartDatas.datasets.forEach(dataset => {
-                dataset.borderWidth = 3; // Adjust to desired thickness
-            });
-
             new Chart(ctx, config);
-        })
-    },
-}
+        });
+    }
+};
 </script>
 
 <style></style>

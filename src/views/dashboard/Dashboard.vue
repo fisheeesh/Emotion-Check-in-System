@@ -68,24 +68,27 @@ export default {
                 datasets: [
                     {
                         label: 'Positive',
-                        data: [350, 800, 1150, 1800, 2500],
+                        data: [0.1, 0.3, 0.5, 0.4],
                         fill: false,
-                        borderColor: 'rgb(76, 175, 80, 1)',
-                        tension: 0
+                        borderColor: '#BAEDBD', // light green for Positive
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Neutral',
-                        data: [100, 130, 400, 500, 600],
+                        data: [0, 0, 0, 0],
                         fill: false,
-                        borderColor: '#FFEB9E',
-                        tension: 0
+                        borderColor: '#FFBF76', // neutral color
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Negative',
-                        data: [50, 70, 110, 150, 180],
+                        data: [-0.2, -0.1, -0.3, -0.2],
                         fill: false,
-                        borderColor: '#FF3B30',
-                        tension: 0
+                        borderColor: '#FB9F9F', // light red for Negative
+                        borderWidth: 2,
+                        tension: 0.4
                     }
                 ]
             },
@@ -94,24 +97,27 @@ export default {
                 datasets: [
                     {
                         label: 'Positive',
-                        data: [1000, 1200, 1500, 2000, 2500, 3000, 3200, 3500, 3700, 4000],
+                        data: [0.6, 0.5, 0.7, 0.6, 0.8, 0.7, 0.9, 0.8, 0.7, 0.6],
                         fill: false,
-                        borderColor: 'rgb(76, 175, 80, 1)',
-                        tension: 0
+                        borderColor: '#BAEDBD', // light green for Positive
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Neutral',
-                        data: [300, 400, 600, 800, 1000, 1200, 1400, 1600, 1800, 2000],
+                        data: [0.2, 0.3, 0.1, 0.2, 0.1, 0.2, 0.1, 0.2, 0.1, 0.3],
                         fill: false,
-                        borderColor: '#FFCE3F',
-                        tension: 0
+                        borderColor: '#FFBF76', // neutral color
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Negative',
-                        data: [150, 200, 300, 400, 500, 600, 700, 800, 900, 1000],
+                        data: [-0.4, -0.2, -0.3, -0.4, -0.2, -0.3, -0.1, -0.2, -0.3, -0.4],
                         fill: false,
-                        borderColor: '#FF3B30',
-                        tension: 0
+                        borderColor: '#FB9F9F', // light red for Negative
+                        borderWidth: 2,
+                        tension: 0.4
                     }
                 ]
             },
@@ -120,33 +126,37 @@ export default {
                 datasets: [
                     {
                         label: 'Positive',
-                        data: [4000, 5000, 5200, 5600],
+                        data: [0.6, 0.7, 0.8, 0.7],
                         fill: false,
-                        borderColor: 'rgb(76, 175, 80, 1)',
-                        tension: 0
+                        borderColor: '#BAEDBD', // light green for Positive
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Neutral',
-                        data: [1200, 1300, 1400, 1500],
+                        data: [0.3, 0.1, 0.2, 0.3],
                         fill: false,
-                        borderColor: '#FFCE3F',
-                        tension: 0
+                        borderColor: '#FFBF76', // neutral color
+                        borderWidth: 2,
+                        tension: 0.4
                     },
                     {
                         label: 'Negative',
-                        data: [600, 550, 500, 450],
+                        data: [-0.1, -0.2, -0.1, -0.3],
                         fill: false,
-                        borderColor: '#FF3B30',
-                        tension: 0
+                        borderColor: '#FB9F9F', // light red for Negative
+                        borderWidth: 2,
+                        tension: 0.4
                     }
                 ]
             }
-        ]
+            // Add similar structures for Monthly and Yearly data if needed
+        ];
 
         onMounted(() => {
             setTimeout(() => {
                 loading.value = false
-            }, 800)
+            }, 500)
         })
 
         return { current, loading, chartDatas }
