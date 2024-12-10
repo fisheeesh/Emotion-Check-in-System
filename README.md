@@ -1,4 +1,6 @@
-# example
+# Emotion Check-in System
+
+Preview - https://emotion-check-in-system.web.app/
 
 ## Project setup
 ```
